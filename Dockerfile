@@ -1,4 +1,5 @@
-FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
+# FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel
+FROM python:3.12.9-bookworm
 
 # Install ffmpeg
 # RUN apt update && apt install -y ffmpeg
