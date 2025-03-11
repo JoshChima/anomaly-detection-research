@@ -1,27 +1,10 @@
 {
 	"name": "Anomaly Detection Research",
-	// "image": "pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel",
-	"build": {
-		"context": "..",
-		"dockerfile": "../Dockerfile"
-	},
-	"runArgs": [
-		"--runtime=nvidia",
-		"--gpus=all",
-		"--add-host=host.docker.internal:host-gateway"
-	],
-	"remoteEnv": {
-		"PATH": "${containerEnv:PATH}:/usr/local/cuda/bin",
-		"LD_LIBRARY_PATH": "$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64",
-		"XLA_FLAGS": "--xla_gpu_cuda_data_dir=/usr/local/cuda"
-	},
-	"hostRequirements": {
-		"gpu": true
-	},
-	// "updateContentCommand": "bash .devcontainer/install-dev-tools.sh",
-	"postCreateCommand": [
-		"nvidia-smi"
-	],
+	"image": "python:3.12.9-bookworm",
+	// "build": {
+	// 	"context": "..",
+	// 	"dockerfile": "../Dockerfile"
+	// },
 	"forwardPorts": [
 		5173,
 		8090,
